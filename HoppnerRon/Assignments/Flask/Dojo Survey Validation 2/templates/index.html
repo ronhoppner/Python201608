@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey With Validation</title>
+</head>
+
+<body>
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+<form action="/validate", method='post'>
+	Your Name:<input type="text" name="name">
+	Dojo Location:<select name="location">
+		<option value='Westeros'>Westeros</option>
+		<option value='Kronos'>Kronos</option>
+		<option value='Dallas'>Dallas</option>
+	</select>
+	Preferred Language:<select name="language">
+		<option value='Common Tongue'>Common Tongue</option>
+		<option value="Klingon">Klingon</option>
+		<option value="Python">Python</option>
+	</select>
+	Comment:<textarea name="comment" rows="6" cols="50" placeholder="Optional"></textarea>
+	<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

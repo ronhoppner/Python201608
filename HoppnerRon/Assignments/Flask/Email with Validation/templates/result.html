@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success Page</title>
+</head>
+<body>
+
+<p>The email address you entered "{{ msg }}" is a vaild email address. Good job!</p>
+
+<h2>Email Addresses Entered</h2>
+
+	{% for entry in all_addresses: %}
+   		<p>{{ entry['address'] }} {{ entry['created_at'] }}</p>
+    <hr>
+    {% endfor %}
+</body>
+</html>

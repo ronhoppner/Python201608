@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Advanced Validation Example</title>
+  <style type="text/css">
+    input {
+      display: block;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Register a User:</h1>
+  <form action='/process' method='POST'>
+    Email:<input type="text" name="email" placeholder="someone@something.com">
+    First Name:<input type="text" name="fname">
+    Last Name:<input type="text" name="lname">
+    Password:<input type="password" name="password" placeholder="Must be at least 8 alpha-numeric characters.">
+    Confirm Password:<input type="password" name="pwordconfirm" placeholder="Must match password.">
+    <input type="submit" value="Submit">
+  </form><hr>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>

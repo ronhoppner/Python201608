@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Guessing Game</title>
+</head>
+<body>
+
+<h1>Guess the number:</h1>
+
+<h3>{{ session['message'] }}</h3>
+
+<form action="/guess" method="POST">
+	Guess:<input type="text" name="guess">
+	<input type="submit" value="Guess">
+</form>
+<button action="/reset">Play Again</button>
+</body>
+</html>
